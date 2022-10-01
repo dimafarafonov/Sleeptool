@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from 'react-native';
 
 import styled from 'styled-components/native';
 
@@ -7,41 +6,61 @@ import LinearGradient from 'react-native-linear-gradient';
 
 import { pallete } from 'utils/brand-book';
 
+import { MenuItem } from './components/MenuItem';
+
+const menuArray = [1, 1, 1, 1, 1, 1];
+
 const HomeScreen = () => {
   return (
-    <>
-      <SafeAreaViewContainerTop />
-      <SafeAreaViewContainerBottom>
-        <Container
-          colors={[
-            pallete.midnightBlueGreen,
-            pallete.wildBlueYonder,
-            pallete.midnightBlueGreen,
-          ]}
-          locations={[0.15, 0.7, 0.15]}>
-          <Text>Home</Text>
-        </Container>
-      </SafeAreaViewContainerBottom>
-    </>
+    <SafeAreaViewContainer>
+      <Container
+        colors={[
+          pallete.midnightBlueGreen,
+          pallete.wildBlueYonder,
+          pallete.midnightBlueGreen,
+        ]}
+        locations={[0, 1, 0]}>
+        <MenuContainer>
+          {menuArray.map((_, index) => (
+            <MenuItem text={'GUIDE'} index={index} />
+          ))}
+        </MenuContainer>
+      </Container>
+    </SafeAreaViewContainer>
   );
 };
 
 const Container = styled(LinearGradient)`
   padding: 15px;
-  display: flex;
-  height: 100%;
+  flex: 1;
+  justify-content: center;
 `;
 
-const SafeAreaViewContainerTop = styled.SafeAreaView`
-  background-color: ${pallete.midnightBlueGreen};
-  display: flex;
-  flex: 0;
-`;
-
-const SafeAreaViewContainerBottom = styled.SafeAreaView`
-  background-color: ${pallete.wildBlueYonder};
+const SafeAreaViewContainer = styled.SafeAreaView`
   display: flex;
   flex: 1;
 `;
+
+const MenuContainer = styled.View`
+  display: flex;
+  height: 80%;
+  padding: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+`;
+
+// const SafeAreaViewContainerTop = styled.SafeAreaView`
+//   background-color: ${pallete.midnightBlueGreen};
+//   display: flex;
+//   flex: 0;
+// `;
+
+// const SafeAreaViewContainerBottom = styled.SafeAreaView`
+//   background-color: ${pallete.wildBlueYonder};
+//   display: flex;
+//   flex: 1;
+// `;
 
 export { HomeScreen };
