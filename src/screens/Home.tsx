@@ -19,7 +19,7 @@ const HomeScreen = () => {
             pallete.midnightBlueGreen,
           ]}
           locations={[0.15, 0.7, 0.15]}>
-          <Text>future start</Text>
+          <Text>Home</Text>
         </Container>
       </SafeAreaViewContainerBottom>
     </>
@@ -29,8 +29,6 @@ const HomeScreen = () => {
 const Container = styled(LinearGradient)`
   padding: 15px;
   display: flex;
-  border-color: black;
-  border-width: 2px;
   height: 100%;
 `;
 
