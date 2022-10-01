@@ -39,6 +39,7 @@ const Container = styled(LinearGradient)`
 const SafeAreaViewContainer = styled.SafeAreaView`
   display: flex;
   flex: 1;
+  background-color: ${pallete.grannySmithApple};
 `;
 
 const MenuContainer = styled.View`
@@ -50,17 +51,5 @@ const MenuContainer = styled.View`
   justify-content: space-between;
   align-content: center;
 `;
-
-// const SafeAreaViewContainerTop = styled.SafeAreaView`
-//   background-color: ${pallete.midnightBlueGreen};
-//   display: flex;
-//   flex: 0;
-// `;
-
-// const SafeAreaViewContainerBottom = styled.SafeAreaView`
-//   background-color: ${pallete.wildBlueYonder};
-//   display: flex;
-//   flex: 1;
-// `;
 
 export { HomeScreen };
