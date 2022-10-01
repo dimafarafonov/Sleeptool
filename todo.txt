@@ -1,1 +1,3 @@
 1. add color selector picker
+2. by the availability fix warnings with keys
+3. try to add animation to Home screen and animate menu container
