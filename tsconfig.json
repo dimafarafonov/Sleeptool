@@ -12,7 +12,9 @@
     "baseUrl": "./",
      "paths": {
        "screens/*": ["src/screens/*"],
-       "utils/*": ["src/utils/*"]
+       "utils/*": ["src/utils/*"],
+       "assets/*": ["src/assets/*"],
+       "api/*": ["src/api/*"]
      },
   }
 }

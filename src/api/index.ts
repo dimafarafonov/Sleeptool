@@ -1,0 +1,1 @@
+export { postImage } from './postImage';
