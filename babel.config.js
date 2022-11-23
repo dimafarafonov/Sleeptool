@@ -10,6 +10,8 @@ module.exports = {
           tests: ['./tests/'],
           '@screens': './src/screens/',
           '@utils': './src/utils/',
+          '@assets': './src/assets/',
+          '@api': './src/api/',
         },
       },
     ],

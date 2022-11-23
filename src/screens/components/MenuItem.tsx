@@ -9,6 +9,8 @@ import styled from 'styled-components/native';
 
 import { pallete } from 'utils/brand-book';
 
+import { postImage } from '../../api';
+
 const NUMBER_OF_CEILS_TO_PAINT_TOP_COLOR_GRADIENT = -1;
 
 interface IMenuItem {
@@ -27,6 +29,7 @@ const MenuItem = ({
   <MenuItemContainer {...gradientContainerProps}>
     <MenuItemTouchHandler
       {...pressHandlerContainerProps}
+      onPress={postImage}
       style={({ pressed }) => [
         {
           opacity: pressed ? 0.5 : 1,
