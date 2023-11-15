@@ -22,7 +22,7 @@ const HomeScreen = () => {
         locations={[0, 1, 0]}>
         <MenuContainer>
           {menuArray.map((_, index) => (
-            <MenuItem text={'GUIDE'} index={index} />
+            <MenuItem text={'GUIDE'} index={index} key={index}/>
           ))}
         </MenuContainer>
       </Container>

@@ -83,7 +83,7 @@ const MenuItemText = styled.Text.attrs(
     ...textProps,
   }),
 )`
-  align-text: center;
+  align-items: center;
 	color:${({ index }: { index: number }) =>
     index > NUMBER_OF_CEILS_TO_PAINT_TOP_COLOR_GRADIENT
       ? pallete.mintCream
