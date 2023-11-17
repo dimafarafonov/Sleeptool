@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextProps } from 'react-native';
+import { Alert, TextProps } from 'react-native';
 import { PressableProps, Pressable } from 'react-native';
 
 import LinearGradient, {
@@ -9,7 +9,6 @@ import styled from 'styled-components/native';
 
 import { pallete } from 'utils/brand-book';
 
-import { postImage } from '../../api';
 
 const NUMBER_OF_CEILS_TO_PAINT_TOP_COLOR_GRADIENT = -1;
 
@@ -29,7 +28,7 @@ const MenuItem = ({
   <MenuItemContainer {...gradientContainerProps}>
     <MenuItemTouchHandler
       {...pressHandlerContainerProps}
-      onPress={postImage}
+      onPress={()=> Alert.alert('Click')}
       style={({ pressed }) => [
         {
           opacity: pressed ? 0.5 : 1,
