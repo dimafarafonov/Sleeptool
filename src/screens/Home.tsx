@@ -1,4 +1,7 @@
 import React from 'react';
+import { Text, View, ScrollView } from 'react-native';
+
+import { useQuery, gql } from '@apollo/client';
 
 import styled from 'styled-components/native';
 
@@ -10,7 +13,23 @@ import { MenuItem } from './components/MenuItem';
 
 const menuArray = [1, 1, 1, 1, 1, 1];
 
+const GET_LOCATIONS = gql`
+  query GetLocations {
+    locations {
+      id
+      name
+      description
+      photo
+    }
+  }
+`;
+
 const HomeScreen = () => {
+  const { loading, error, data } = useQuery(GET_LOCATIONS);
+  console.log(loading);
+  console.log(error);
+  console.log(data);
+
   return (
     <SafeAreaViewContainer>
       <Container
@@ -20,11 +39,23 @@ const HomeScreen = () => {
           pallete.midnightBlueGreen,
         ]}
         locations={[0, 1, 0]}>
-        <MenuContainer>
+        {/* <MenuContainer>
           {menuArray.map((_, index) => (
             <MenuItem text={'GUIDE'} index={index} key={index}/>
           ))}
-        </MenuContainer>
+        </MenuContainer> */}
+        <ScrollView>
+          {data.locations.map(({ id, name, description, photo }) => {
+            return (
+              <View>
+                <Text>{id}</Text>
+                <Text>{name}</Text>
+                <Text>{description}</Text>
+                <Text>{photo}</Text>
+              </View>
+            );
+          })}
+        </ScrollView>
       </Container>
     </SafeAreaViewContainer>
   );
