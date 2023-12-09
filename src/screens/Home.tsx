@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, NativeModules, Pressable } from 'react-native';
 
 import { useQuery, gql } from '@apollo/client';
 
@@ -10,6 +10,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import { pallete } from 'utils/brand-book';
 
 import { MenuItem } from './components/MenuItem';
+
+const { CalendarModule } = NativeModules;
 
 const menuArray = [1, 1, 1, 1, 1, 1];
 
@@ -24,39 +26,18 @@ const GET_LOCATIONS = gql`
   }
 `;
 
+const CheckCalendarNativeLogs = () => {
+  return CalendarModule.createCalendarEvent('Sleeptool name', 'Kyiv location');
+};
+
 const HomeScreen = () => {
   const { loading, error, data } = useQuery(GET_LOCATIONS);
-  console.log(loading);
-  console.log(error);
-  console.log(data);
 
   return (
     <SafeAreaViewContainer>
-      <Container
-        colors={[
-          pallete.midnightBlueGreen,
-          pallete.wildBlueYonder,
-          pallete.midnightBlueGreen,
-        ]}
-        locations={[0, 1, 0]}>
-        {/* <MenuContainer>
-          {menuArray.map((_, index) => (
-            <MenuItem text={'GUIDE'} index={index} key={index}/>
-          ))}
-        </MenuContainer> */}
-        <ScrollView>
-          {data.locations.map(({ id, name, description, photo }) => {
-            return (
-              <View>
-                <Text>{id}</Text>
-                <Text>{name}</Text>
-                <Text>{description}</Text>
-                <Text>{photo}</Text>
-              </View>
-            );
-          })}
-        </ScrollView>
-      </Container>
+      <Pressable onPress={CheckCalendarNativeLogs}>
+        <Text style={{ textAlign: 'center' }}>CheckLogs</Text>
+      </Pressable>
     </SafeAreaViewContainer>
   );
 };
@@ -70,6 +51,7 @@ const Container = styled(LinearGradient)`
 const SafeAreaViewContainer = styled.SafeAreaView`
   display: flex;
   flex: 1;
+  justify-content: center;
   background-color: ${pallete.grannySmithApple};
 `;
 
