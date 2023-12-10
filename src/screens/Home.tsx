@@ -11,6 +11,7 @@ import { pallete } from 'utils/brand-book';
 
 import { MenuItem } from './components/MenuItem';
 
+// TODO: https://reactnative.dev/docs/native-modules-android?android-language=kotlin#register-the-module-android-specific
 const { CalendarModule } = NativeModules;
 
 const menuArray = [1, 1, 1, 1, 1, 1];
@@ -35,8 +36,8 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaViewContainer>
-      <Pressable onPress={CheckCalendarNativeLogs}>
-        <Text style={{ textAlign: 'center' }}>CheckLogs</Text>
+      <Pressable onPress={CheckCalendarNativeLogs} style={({pressed}) => []}>
+        <Text style={{ textAlign: 'center' }}>CheckLogsButton</Text>
       </Pressable>
     </SafeAreaViewContainer>
   );
