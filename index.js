@@ -17,7 +17,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const App = () => {
+export default App = () => {
   return (
     <ApolloProvider client={client}>
       <HomeScreen />
