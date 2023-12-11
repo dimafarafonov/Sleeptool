@@ -11,6 +11,8 @@ import { pallete } from 'utils/brand-book';
 
 import { MenuItem } from './components/MenuItem';
 
+import RTNCalculator from 'rtn-calculator/js/NativeCalculator';
+
 // TODO: https://reactnative.dev/docs/native-modules-android?android-language=kotlin#register-the-module-android-specific
 const { CalendarModule } = NativeModules;
 
@@ -27,8 +29,10 @@ const GET_LOCATIONS = gql`
   }
 `;
 
-const CheckCalendarNativeLogs = () => {
-  return CalendarModule.createCalendarEvent('Sleeptool name', 'Kyiv location');
+const CheckCalendarNativeLogs = async () => {
+  // return CalendarModule.createCalendarEvent('Sleeptool name', 'Kyiv location');
+  const value = await RTNCalculator?.add(5, 10);
+  console.log(value)
 };
 
 const HomeScreen = () => {
@@ -36,7 +40,7 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaViewContainer>
-      <Pressable onPress={CheckCalendarNativeLogs} style={({pressed}) => []}>
+      <Pressable onPress={CheckCalendarNativeLogs} style={({ pressed }) => []}>
         <Text style={{ textAlign: 'center' }}>CheckLogsButton</Text>
       </Pressable>
     </SafeAreaViewContainer>
