@@ -24,6 +24,20 @@ public class CalculatorPackage extends TurboReactPackage {
 
   @Override
   public ReactModuleInfoProvider getReactModuleInfoProvider() {
-      return null;
+      return () -> {
+       final Map<String, ReactModuleInfo> moduleInfos = new HashMap<>();
+       moduleInfos.put(
+               CalculatorModule.NAME,
+               new ReactModuleInfo(
+                       CalculatorModule.NAME,
+                       CalculatorModule.NAME,
+                       false, // canOverrideExistingModule
+                       false, // needsEagerInit
+                       true, // hasConstants
+                       false, // isCxxModule
+                       true // isTurboModule
+       ));
+       return moduleInfos;
+   };
   }
 }
