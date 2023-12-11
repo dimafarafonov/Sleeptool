@@ -26,7 +26,8 @@ public class CalculatorPackage extends TurboReactPackage {
 
 
   @Override
-  public ReactModuleInfoProvider getReactModuleInfoProvider() {
+  public ReactModuleInfoProvider getReactModuleInfoProvider() { // something in there or smt
+  // java.lang.NullPointerException: Attempt to invoke interface method 'java.util.Map com.facebook.react.module.model.ReactModuleInfoProvider.getReactModuleInfos()' on a null object reference
       return () -> {
           final Map<String, ReactModuleInfo> moduleInfos = new HashMap<>();
           moduleInfos.put(
