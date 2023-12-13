@@ -17,3 +17,5 @@ Pod::Spec.new do |s|
 
   install_modules_dependencies(s)
 end
+
+# after yarn ./RTNCalculator android started to work but ios started to fail
