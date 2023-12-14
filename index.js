@@ -26,3 +26,4 @@ export default App = () => {
 };
 
 AppRegistry.registerComponent(appName, () => App);
+// starting fabric with next session, for now a bit exhausted
