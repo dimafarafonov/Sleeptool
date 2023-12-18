@@ -26,3 +26,5 @@ export default App = () => {
 };
 
 AppRegistry.registerComponent(appName, () => App);
+// starting fabric with next session, for now a bit exhausted
+// surfing though fabric docs, the same as turbo modules, will everything all together later
