@@ -16,13 +16,13 @@
       "!**/__mocks__"
     ],
     "keywords": ["react-native", "ios", "android"],
-    "repository": "https://github.com/<your_github_handle>/rtn-centered-text",
-    "author": "<Your Name> <your_email@your_provider.com> (https://github.com/<your_github_handle>)",
+    "repository": "https://github.com/dimafarafonov/rtn-centered-text",
+    "author": "Dima Farafonov dimafarafonovzt@gmail.com (https://github.com/dimafarafonov)",
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/<your_github_handle>/rtn-centered-text/issues"
+      "url": "https://github.com/dimafarafonov/rtn-centered-text/issues"
     },
-    "homepage": "https://github.com/<your_github_handle>/rtn-centered-text#readme",
+    "homepage": "https://github.com/dimafarafonov/rtn-centered-text#readme",
     "devDependencies": {},
     "peerDependencies": {
       "react": "*",
