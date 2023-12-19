@@ -32,16 +32,19 @@ const GET_LOCATIONS = gql`
 const CheckCalendarNativeLogs = async () => {
   // return CalendarModule.createCalendarEvent('Sleeptool name', 'Kyiv location');
   const value = await RTNCalculator?.add(5, 10);
-  console.log(value)
+  console.log(value);
 };
 
 const HomeScreen = () => {
   const { loading, error, data } = useQuery(GET_LOCATIONS);
-
+// suddenly i found out that "italic" prop only works on android due android system fonts, which recognize such props
+// in contrast with iOS, which support some italic's, but fonts need to be installed manually 
   return (
     <SafeAreaViewContainer>
       <Pressable onPress={CheckCalendarNativeLogs} style={({ pressed }) => []}>
-        <Text style={{ textAlign: 'center' }}>CheckLogsButton</Text>
+        <Text style={{ textAlign: 'center', fontStyle: 'italic' }}>  
+          CheckLogsButton
+        </Text>
       </Pressable>
     </SafeAreaViewContainer>
   );
