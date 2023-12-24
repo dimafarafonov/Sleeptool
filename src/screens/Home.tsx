@@ -12,6 +12,7 @@ import { pallete } from 'utils/brand-book';
 import { MenuItem } from './components/MenuItem';
 
 import RTNCalculator from 'rtn-calculator/js/NativeCalculator';
+import RTNCenteredText from 'rtn-centered-text/js/RTNCenteredTextNativeComponent';
 
 // TODO: https://reactnative.dev/docs/native-modules-android?android-language=kotlin#register-the-module-android-specific
 const { CalendarModule } = NativeModules;
@@ -37,14 +38,18 @@ const CheckCalendarNativeLogs = async () => {
 
 const HomeScreen = () => {
   const { loading, error, data } = useQuery(GET_LOCATIONS);
-// suddenly i found out that "italic" prop only works on android due android system fonts, which recognize such props
-// in contrast with iOS, which support some italic's, but fonts need to be installed manually 
+  // suddenly i found out that "italic" prop only works on android due android system fonts, which recognize such props
+  // in contrast with iOS, which support some italic's, but fonts need to be installed manually
   return (
     <SafeAreaViewContainer>
       <Pressable onPress={CheckCalendarNativeLogs} style={({ pressed }) => []}>
-        <Text style={{ textAlign: 'center', fontStyle: 'italic' }}>  
+        <Text style={{ textAlign: 'center', fontStyle: 'italic' }}>
           CheckLogsButton
         </Text>
+        <RTNCenteredText
+          text="Hello World!"
+          style={{ width: '100%', height: 30 }}
+        />
       </Pressable>
     </SafeAreaViewContainer>
   );
