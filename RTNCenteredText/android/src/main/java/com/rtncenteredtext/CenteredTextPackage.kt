@@ -7,7 +7,7 @@ import com.facebook.react.uimanager.ViewManager
 
 class CenteredTextPackage : ReactPackage {
   override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> =
-    emptyList()
+    listOf(CenteredTextManager(reactContext))
 
   override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> =
     emptyList()
