@@ -124,3 +124,4 @@ apply from: file("../../node_modules/@react-native-community/cli-platform-androi
 apply plugin: 'org.jetbrains.kotlin.android'
 
 // struggling with android
+// starting leetcode becasue of interview
